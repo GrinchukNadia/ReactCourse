@@ -1,0 +1,10 @@
+.main{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.imageBanner img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}

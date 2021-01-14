@@ -1,0 +1,16 @@
+body{
+  background-color: #ececec;
+}
+a{
+  text-decoration: none;
+  color: #27051f;
+}
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+}
+.wrapper.wrapperMain{
+  display: flex;
+}
+
+

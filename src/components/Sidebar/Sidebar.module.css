@@ -1,0 +1,16 @@
+.aside{
+  background-color: rgb(255, 255, 255);
+  min-width: 140px;
+}
+ul li{
+  list-style: none;
+  color: red;
+}
+a{
+  text-decoration: none;
+  color: #27051f;
+}
+a.active{
+  text-decoration: underline;
+  color: #881b6e;
+}
