@@ -1,9 +1,10 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 
 const DialogItem = (props) => {
     return (
-    <NavLink exact to={props.link} > {props.name} </NavLink>
+    <div>
+        {props.name} 
+    </div>
     )
 }
 

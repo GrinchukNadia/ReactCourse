@@ -2,12 +2,23 @@ import React from 'react';
 import s from './Chat.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import AvatarItem from './AvatarItem/AvatarItem';
+import {NavLink} from 'react-router-dom';
+
+
 
 
 const Chat = (props) => {
-    let message = props.chat.messageData.map( el => <Message message={el.text} />)
+    let message = props.chat.messageData.map( el => <Message person={el.person} message={el.text} />)
 
-    let friends = props.chat.friendsData.map( el => <DialogItem link={"/chat/" + el.id} name={el.name} />)
+    let friends = props.chat.friendsData.map( el => {
+        return (
+            <NavLink exact to={`/chat/${el.id}`} className={s.friend}>
+                <AvatarItem link={el.img} />
+                <DialogItem name={el.name} />
+            </NavLink>
+        )
+    })
 
     return(
         <div className={s.chatBlock}>

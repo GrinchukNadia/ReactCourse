@@ -10,7 +10,7 @@ const Profile = (props) => {
       <main className={s.main}>
 
       <div className={s.imageBanner}>
-        <img src="https://www.freewebheaders.com/wp-content/gallery/birds/cute-chicks-on-green-background-header.jpg"></img>
+        <img src="https://i.pinimg.com/originals/d6/d1/97/d6d19793de569671e2e67496f246b3b5.jpg"></img>
       </div>
 
       <div>

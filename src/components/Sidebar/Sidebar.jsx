@@ -1,8 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import BlockFriends from './BlockFriends/BlockFriends';
 import s from './Sidebar.module.css';
 
-const Sidebar = () => {
+
+
+const Sidebar = (props) => {
+
+  
+
     return (
       <aside className={s.aside}>
         <ul>
@@ -11,6 +17,8 @@ const Sidebar = () => {
           <li><NavLink activeClassName={s.active} to="/news">News</NavLink></li>
           <li><NavLink activeClassName={s.active} to="/music">Music</NavLink></li>
         </ul>
+        <BlockFriends chat={props.chat}/>
+        
     </aside>
     )
 }

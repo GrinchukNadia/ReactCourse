@@ -13,7 +13,9 @@ const Posts = (props) => {
       <div>My posts
         <div className={s.addMessage}>
           <textarea name="" id="" ></textarea>
-          <button>Add post</button>
+          <div>
+            <button>Add post</button>
+          </div>
         </div>
         { coments }
       </div>
