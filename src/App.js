@@ -19,7 +19,7 @@ const App = (props) => {
         <Header />
         <div className="wrapper wrapperMain">
           <Sidebar chat={props.chat} />
-          <Route path="/profile" render={() => <Profile state={props.state} />}/>
+          <Route path="/profile" render={() => <Profile addPost={props.addPost} state={props.state} />}/>
           <Route path="/chat" render={() => <Chat chat={props.chat} />}/>
           <Route path="/news" render={() => <News/> } />
           <Route path="/music" render={() => <Music/> } />

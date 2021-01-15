@@ -1,3 +1,5 @@
+import rerenderEntireTree from './../render';
+
 let state = {
     profilePage: {
         commentsData: [
@@ -30,7 +32,17 @@ let state = {
                         {text: "Don't you want to sleep?", person: 'friend'},
                         {text: "I'll be playing new game", person: 'me'}
                       ]
-    }
-}
+    },
+  }
+  let addPost = (postMessage) => {
+    let newPost = {
+          image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
+          message: postMessage,
+          likes: 0};
 
+    state.profilePage.commentsData.push(newPost);
+    rerenderEntireTree(state);
+  }
+
+export {addPost};
 export default state;
