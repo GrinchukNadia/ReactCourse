@@ -6,11 +6,8 @@ import AvatarItem from './AvatarItem/AvatarItem';
 import {NavLink} from 'react-router-dom';
 
 
-
-
 const Chat = (props) => {
     let message = props.chat.messageData.map( el => <Message person={el.person} message={el.text} />)
-
     let friends = props.chat.friendsData.map( el => {
         return (
             <NavLink exact to={`/chat/${el.id}`} className={s.friend}>

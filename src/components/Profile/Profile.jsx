@@ -3,7 +3,7 @@ import s from './Profile.module.css'
 import Posts from './Posts/Posts'
 
 const Profile = (props) => {
-
+;
 
 
     return (
@@ -17,7 +17,7 @@ const Profile = (props) => {
         ava + description
       </div>
 
-      <Posts addPost={props.addPost} onPostChange={props.onPostChange} profilePage={props.profilePage.commentsData} newPostText={props.profilePage.newPost} />
+      <Posts addPost={props.addPost} onPostChange={props.onPostChange} state={props.state.profilePage} />
 
     </main>
     )

@@ -4,13 +4,8 @@ import s from './Posts.module.css'
 
 const Posts = (props) => {
 
-
-  let coments = 
-    props.profilePage
-    .map( post => <Post  image={post.image} 
-                         message={post.message} 
-                         likes={post.likes} 
-  />)
+debugger; 
+  let coments = props.state.commentsData.map( post => <Post  image={post.image} message={post.message} likes={post.likes} />)
 
   let newPostElement = React.createRef();
 
@@ -26,7 +21,7 @@ const Posts = (props) => {
   return (
       <div>My posts
         <div className={s.addMessage}>
-          <textarea value={props.newPostText} 
+          <textarea value={props.state.newPost} 
                     onChange={onPostChange}
                     ref={newPostElement} 
                     name="" id="" />

@@ -1,9 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-import state from './redux/state'
-import rerenderEntireTree from './render';
+import App from './App';
+import store from './redux/state'; 
 
 
-rerenderEntireTree(state);
+let rerenderEntireTree = (state) => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App onPostChange={store.onPostChange.bind(store)} 
+           addPost={store.addPost.bind(store)} 
+           state={state} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
-reportWebVitals();
+rerenderEntireTree(store.getState());
+store.updateDom(rerenderEntireTree);
+export default rerenderEntireTree;
+
+

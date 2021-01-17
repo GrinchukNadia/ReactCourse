@@ -11,16 +11,14 @@ import {BrowserRouter , Route} from "react-router-dom";
 
 const App = (props) => {
 
-   
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <div className="wrapper wrapperMain">
-          <Sidebar chat={props.chat} />
-          <Route path="/profile" render={() => <Profile addPost={props.addPost} onPostChange={props.onPostChange} profilePage={props.profilePage} />}/>
-          <Route path="/chat" render={() => <Chat chat={props.chat} />}/>
+          <Sidebar />
+          <Route path="/profile" render={() => <Profile addPost={props.addPost} onPostChange={props.onPostChange} state={props.state} />}/>
+          <Route path="/chat" render={() => <Chat chat={props.state.chatPage} />}/>
           <Route path="/news" render={() => <News/> } />
           <Route path="/music" render={() => <Music/> } />
         </div>

@@ -1,19 +1,15 @@
-import rerenderEntireTree from './../render';
-
-let state = {
-  
+let store = {
+  _state: {
     profilePage: {
         commentsData: [
-          {image: "https://cs7.pikabu.ru/post_img/big/2018/10/20/9/154004999513599819.jpg", message: "Всем привет. Я тут новенький", likes: "246"},
-          {image: "https://i.pinimg.com/originals/04/a8/73/04a87347b071ec062a586e02c23f6221.png", message: "Вчера видел классный фильм. Го обсуждать", likes: "5"},
-          {image: "https://i2.wp.com/gubdaily.ru/wp-content/uploads/2019/07/02-2.jpg?fit=1000%2C576&ssl=1", message: "Кто знает в чем может быть проблема", likes: "23"},
+          {image: "https://cs7.pikabu.ru/post_img/big/2018/10/20/9/154004999513599819.jpg", message: "Всем привет. Я тут новенький", likes: "И ЧТО?????????????????"},
+          {image: "https://i.pinimg.com/originals/04/a8/73/04a87347b071ec062a586e02c23f6221.png", message: "Вчера видел классный сайт. Го обсуждать :D😁", likes: "5"},
+          {image: "https://i2.wp.com/gubdaily.ru/wp-content/uploads/2019/07/02-2.jpg?fit=1000%2C576&ssl=1", message: "Кто знает в чем может быть проблема ☹", likes: "23"},
           {image: "https://cdn141.picsart.com/326383677140211.png?type=webp&to=min&r=640", message: "Что не так с этим миром?", likes: "827"},
           {image: "https://i.pinimg.com/originals/02/29/cf/0229cf00478ba83e641dfd23ef0339c5.png", message: "ААААААААААААААААААААААААААААААААААААААА", likes: "10M"},
-          {image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg", message: "НЕ НАДО ТАК МНОГО ЛАЙКОВ", likes: "5"} 
+          {image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg", message: "НЕ НАДО ТАК МНОГО ЛАЙКОВ", likes: "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000M"} 
                       ],
-        newPost: ""
-        
-
+        newPost: "" 
     },
     chatPage: {
         friendsData: [
@@ -35,27 +31,36 @@ let state = {
           {text: "Don't you want to sleep?", person: 'friend'},
           {text: "I'll be playing new game", person: 'me'}
                       ]
-    },
-}
+    }
+  },
+ 
+  getState() {
+    return this._state
+  },
 
-window.state = state;
+  _callSubscriber() {
+    console.log("State changed");
+  },
 
-  let addPost = () => {
+  addPost() {
     let newPost = {
           image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
-          message: state.profilePage.newPost,
+          message: this._state.profilePage.newPost,
           likes: 0};
+  
+    this._state.profilePage.commentsData.push(newPost);
+    this._state.profilePage.newPost = "";
+    this._callSubscriber(this._state);
+  },
 
-    state.profilePage.commentsData.push(newPost);
-    rerenderEntireTree(state);
-    state.profilePage.newPost = "";
+  onPostChange(postText) {
+    this._state.profilePage.newPost = postText;
+    this._callSubscriber(this._state);
+  },
+
+  updateDom(observer) {
+    this._callSubscriber = observer;
   }
+}
 
-  let onPostChange = (postText) => {
-    state.profilePage.newPost = postText;
-    rerenderEntireTree(state);
-  }
-
-export {onPostChange};
-export {addPost};
-export default state;
+export default store;
