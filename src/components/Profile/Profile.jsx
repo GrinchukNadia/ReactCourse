@@ -17,7 +17,7 @@ const Profile = (props) => {
         ava + description
       </div>
 
-      <Posts addPost={props.addPost} onPostChange={props.onPostChange} state={props.state.profilePage} />
+      <Posts dispatch={props.dispatch} state={props.state.profilePage} />
 
     </main>
     )
