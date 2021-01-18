@@ -3,14 +3,6 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid;
-}
-.friend {
-    display: flex;
-    justify-content: flex-end;
-
-}
-.me {
-    display: flex;
-    justify-content: flex-start;
+    padding: 0px 16px;
+    border-bottom: 1px solid;
 }

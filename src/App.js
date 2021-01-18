@@ -18,7 +18,7 @@ const App = (props) => {
         <div className="wrapper wrapperMain">
           <Sidebar />
           <Route path="/profile" render={() => <Profile dispatch={props.dispatch} state={props.state} />}/>
-          <Route path="/chat" render={() => <Chat chat={props.state.chatPage} />}/>
+          <Route path="/chat" render={() => <Chat dispatch={props.dispatch} state={props.state.chatPage} />}/>
           <Route path="/news" render={() => <News/> } />
           <Route path="/music" render={() => <Music/> } />
         </div>

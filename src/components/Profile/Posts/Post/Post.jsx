@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Post.module.css'
-// import s from './Profile.module.css'
 
 const Post = (props) => {
     return (

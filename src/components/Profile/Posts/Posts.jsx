@@ -1,6 +1,8 @@
 import React from 'react';
 import Post from './Post/Post'
 import s from './Posts.module.css'
+import {addPostActionCreator, onPostChangeActionCreator} from './../../../redux/state'
+
 
 const Posts = (props) => {
 
@@ -10,12 +12,13 @@ debugger;
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch({type: "ADD-POST"});
+    props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch({type: "ON-POST-CHAGE", text: text});
+    let action = onPostChangeActionCreator(text);
+    props.dispatch(action);
   }
 
   return (

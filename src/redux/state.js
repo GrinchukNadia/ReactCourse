@@ -1,3 +1,8 @@
+const ADD_MESSAGE = "ADD-MESSAGE";
+const ADD_POST = "ADD-POST";
+const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE";
+const ON_POST_CHAGE =  "ON-POST-CHANGE";
+
 let store = {
   _state: {
     profilePage: {
@@ -30,7 +35,8 @@ let store = {
           {text: "Why so?", person: 'friend'},
           {text: "Don't you want to sleep?", person: 'friend'},
           {text: "I'll be playing new game", person: 'me'}
-                      ]
+                      ],
+        newMessage: ""
     }
   },
    
@@ -46,7 +52,7 @@ let store = {
     return this._state
   },
   dispatch(action) {
-    if (action.type === "ADD-POST") {
+    if (action.type === ADD_POST) {
       let newPost = {
             image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
             message: this._state.profilePage.newPost,
@@ -56,12 +62,55 @@ let store = {
       this._state.profilePage.newPost = "";
       this._callSubscriber(this._state);    
     } 
-    else if (action.type === "ON-POST-CHAGE") {
+    else if (action.type === ON_POST_CHAGE) {
       this._state.profilePage.newPost = action.text;
+      this._callSubscriber(this._state);
+    }
+    else if (action.type === ADD_MESSAGE) {
+      let newMessage = {
+        text: this._state.chatPage.newMessage,
+        person: "me"};
+
+      this._state.chatPage.messageData.push(newMessage);
+      this._state.chatPage.newMessage = "";
+      this._callSubscriber(this._state);
+
+    }
+    else if (action.type === ON_MESSAGE_CHANGE) {
+      this._state.chatPage.newMessage = action.text;
       this._callSubscriber(this._state);
     }
   }
 
 }
 
+let addPostActionCreator = () => {
+  return {
+    type: ADD_POST
+  }
+}
+
+let onPostChangeActionCreator = (text) => {
+  return {
+    type: ON_POST_CHAGE, 
+    text: text
+  }
+}
+
+let addMessageActionCreator = () => {
+  return {
+      type: ADD_MESSAGE
+  }
+}
+let onMessageChangeActionCreator = (text) => {
+  return {
+      type: ON_MESSAGE_CHANGE,
+      text: text
+  }
+}
+
+export {addMessageActionCreator};
+export {onMessageChangeActionCreator};
+export {onPostChangeActionCreator};
+export {addPostActionCreator};
 export default store;

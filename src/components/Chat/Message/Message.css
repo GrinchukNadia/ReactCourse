@@ -1,0 +1,8 @@
+#friend {
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+#me {
+    display: flex;
+}
