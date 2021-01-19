@@ -1,7 +1,11 @@
-const ADD_MESSAGE = "ADD-MESSAGE";
-const ADD_POST = "ADD-POST";
-const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE";
-const ON_POST_CHAGE =  "ON-POST-CHANGE";
+import profileReduser from "./profile-reduser";
+import chatReduser from "./chat-reduser";
+
+// const ADD_POST = "ADD-POST";
+// const ON_POST_CHAGE =  "ON-POST-CHANGE";
+// const ADD_MESSAGE = "ADD-MESSAGE";
+// const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE";
+
 
 let store = {
   _state: {
@@ -52,65 +56,11 @@ let store = {
     return this._state
   },
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-            image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
-            message: this._state.profilePage.newPost,
-            likes: 0};
+    this._state.profilePage = profileReduser(store._state.profilePage, action);
+    this._state.chatPage = chatReduser(store._state.chatPage, action);
     
-      this._state.profilePage.commentsData.push(newPost);
-      this._state.profilePage.newPost = "";
-      this._callSubscriber(this._state);    
-    } 
-    else if (action.type === ON_POST_CHAGE) {
-      this._state.profilePage.newPost = action.text;
-      this._callSubscriber(this._state);
-    }
-    else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        text: this._state.chatPage.newMessage,
-        person: "me"};
-
-      this._state.chatPage.messageData.push(newMessage);
-      this._state.chatPage.newMessage = "";
-      this._callSubscriber(this._state);
-
-    }
-    else if (action.type === ON_MESSAGE_CHANGE) {
-      this._state.chatPage.newMessage = action.text;
-      this._callSubscriber(this._state);
-    }
-  }
-
-}
-
-let addPostActionCreator = () => {
-  return {
-    type: ADD_POST
+    this._callSubscriber(this._state);
   }
 }
 
-let onPostChangeActionCreator = (text) => {
-  return {
-    type: ON_POST_CHAGE, 
-    text: text
-  }
-}
-
-let addMessageActionCreator = () => {
-  return {
-      type: ADD_MESSAGE
-  }
-}
-let onMessageChangeActionCreator = (text) => {
-  return {
-      type: ON_MESSAGE_CHANGE,
-      text: text
-  }
-}
-
-export {addMessageActionCreator};
-export {onMessageChangeActionCreator};
-export {onPostChangeActionCreator};
-export {addPostActionCreator};
 export default store;

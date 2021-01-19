@@ -4,7 +4,7 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import AvatarItem from './AvatarItem/AvatarItem';
 import {NavLink} from 'react-router-dom';
-import {addMessageActionCreator, onMessageChangeActionCreator} from './../../redux/state'
+import {addMessageActionCreator, onMessageChangeActionCreator} from './../../redux/chat-reduser'
 
 
 const Chat = (props) => {
