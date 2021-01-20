@@ -48,7 +48,7 @@ let store = {
     console.log("State changed");
   },
 
-  updateDom(observer) {
+  subscribe(observer) {
     this._callSubscriber = observer;
   },
  
