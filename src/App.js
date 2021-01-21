@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
-import Chat from './components/Chat/Chat';
+import ChatContainer from './components/Chat/ChatContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import {BrowserRouter , Route} from "react-router-dom";
@@ -17,8 +17,8 @@ const App = (props) => {
         <Header />
         <div className="wrapper wrapperMain">
           <Sidebar />
-          <Route path="/profile" render={() => <Profile dispatch={props.dispatch} state={props.state} />}/>
-          <Route path="/chat" render={() => <Chat dispatch={props.dispatch} state={props.state.chatPage} />}/>
+          <Route path="/profile" render={() => <Profile store={props.store} />}/>
+          <Route path="/chat" render={() => <ChatContainer store={props.store} />}/>
           <Route path="/news" render={() => <News/> } />
           <Route path="/music" render={() => <Music/> } />
         </div>

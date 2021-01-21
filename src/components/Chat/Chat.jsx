@@ -4,12 +4,12 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import AvatarItem from './AvatarItem/AvatarItem';
 import {NavLink} from 'react-router-dom';
-import {addMessageActionCreator, onMessageChangeActionCreator} from './../../redux/chat-reduser'
+// import {addMessageActionCreator, onMessageChangeActionCreator} from './../../redux/chat-reduser'
 
 
 const Chat = (props) => {
-    let message = props.state.messageData.map( el => <Message person={el.person} message={el.text} />)
-    let friends = props.state.friendsData.map( el => {
+    let message = props.messageData.map( el => <Message person={el.person} message={el.text} />)
+    let friends = props.friendsData.map( el => {
         return (
             <NavLink exact to={`/chat/${el.id}`} className={s.friend}>
                 <AvatarItem link={el.img} />
@@ -18,15 +18,17 @@ const Chat = (props) => {
         )
     })
 
-    let newMessageElement = React.createRef();
+    // let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.addMessage();
     }
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        let action = onMessageChangeActionCreator(text);
-        props.dispatch(action);
+    let onMessageChange = (e) => {
+        let text = e.target.value;
+        props.onMessageChange(text)
+        // let text = newMessageElement.current.value;
+        // let action = onMessageChangeActionCreator(text);
+        // props.dispatch(action);
     }
 
     return(
@@ -41,8 +43,8 @@ const Chat = (props) => {
                     <textarea 
                         className={s.textarea} 
                         name="message"
-                        value={props.state.newMessage}
-                        ref={newMessageElement} 
+                        value={props.newMessage}
+                        // ref={newMessageElement} 
                         onChange={onMessageChange}/>
                     <button onClick={addMessage}>Отправить</button>
                 </div>
