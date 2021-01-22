@@ -1,30 +1,35 @@
 import React from 'react';
-// import s from './Chat.module.css';
-// import DialogItem from './DialogItem/DialogItem';
-// import Message from './Message/Message';
-// import AvatarItem from './AvatarItem/AvatarItem';
-// import {NavLink} from 'react-router-dom';
 import {addMessageActionCreator, onMessageChangeActionCreator} from '../../redux/chat-reduser';
+import StoreContext from '../../storeContext';
 import Chat from "./Chat";
 
 
 const ChatContainer = (props) => {
 
-    let state = props.store.getState();
+    
+    return( 
+        <StoreContext.Consumer>
+            {
+                (store) => {
+                    let state = store.getState();
+                
+                    let addMessage = () => {
+                        store.dispatch(addMessageActionCreator());
+                    }
+                    let onMessageChange = (text) => {
+                        let action = onMessageChangeActionCreator(text);
+                        store.dispatch(action);
+                    }
+                    return <Chat addMessage={addMessage} 
+                              onMessageChange={onMessageChange}
+                              messageData={state.chatPage.messageData}
+                              newMessage={state.chatPage.newMessage}
+                              friendsData={state.chatPage.friendsData}/>
+                }
+            }
 
-    let addMessage = () => {
-        state.dispatch(addMessageActionCreator());
-    }
-    let onMessageChange = (text) => {
-        let action = onMessageChangeActionCreator(text);
-        props.store.dispatch(action);
-    }
-
-    return( <Chat addMessage={addMessage} 
-                  onMessageChange={onMessageChange}
-                  messageData={state.chatPage.messageData}
-                  newMessage={state.chatPage.newMessage}
-                  friendsData={state.chatPage.friendsData}/>)
+        </StoreContext.Consumer>
+    )
 }
 
 
