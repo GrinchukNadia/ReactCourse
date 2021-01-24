@@ -21,10 +21,10 @@ const ChatContainer = (props) => {
                         store.dispatch(action);
                     }
                     return <Chat addMessage={addMessage} 
-                              onMessageChange={onMessageChange}
-                              messageData={state.chatPage.messageData}
-                              newMessage={state.chatPage.newMessage}
-                              friendsData={state.chatPage.friendsData}/>
+                                 onMessageChange={onMessageChange}
+                                 messageData={state.chatPage.messageData}
+                                 newMessage={state.chatPage.newMessage}
+                                 friendsData={state.chatPage.friendsData}/>
                 }
             }
 
