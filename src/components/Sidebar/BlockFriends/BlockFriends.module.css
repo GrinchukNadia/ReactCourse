@@ -1,3 +1,7 @@
 .titleFriends{
     font-size: 28px;
 }
+.friendBlock{
+    display: flex;
+    justify-content: center;
+}

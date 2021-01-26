@@ -1,12 +1,6 @@
 import profileReduser from "./profile-reduser";
 import chatReduser from "./chat-reduser";
 
-// const ADD_POST = "ADD-POST";
-// const ON_POST_CHAGE =  "ON-POST-CHANGE";
-// const ADD_MESSAGE = "ADD-MESSAGE";
-// const ON_MESSAGE_CHANGE = "ON-MESSAGE-CHANGE";
-
-
 let store = {
   _state: {
     profilePage: {
@@ -55,10 +49,10 @@ let store = {
   getState() {
     return this._state
   },
+
   dispatch(action) {
     this._state.profilePage = profileReduser(store._state.profilePage, action);
     this._state.chatPage = chatReduser(store._state.chatPage, action);
-    
     this._callSubscriber(this._state);
   }
 }

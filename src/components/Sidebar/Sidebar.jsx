@@ -14,7 +14,7 @@ const Sidebar = (props) => {
         <ul>
           <li><NavLink activeClassName={s.active} to="/profile">Main</NavLink></li>
           <li><NavLink activeClassName={s.active} to="/chat">Chat</NavLink></li>
-          <li><NavLink activeClassName={s.active} to="/news">News</NavLink></li>
+          <li><NavLink activeClassName={s.active} to="/news">Users</NavLink></li>
           <li><NavLink activeClassName={s.active} to="/music">Music</NavLink></li>
         </ul>
         <BlockFriends chat={props.chat}/>

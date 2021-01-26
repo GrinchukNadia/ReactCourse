@@ -1,0 +1,57 @@
+.body{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container{
+    padding: 10px 20px;
+    margin: 20px 10px 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 4px 13px 0px #0000002f;
+}
+.button{
+    padding: 10px 15px;
+    background: linear-gradient(90deg, rgba(131,58,180,0.5973739837731968) 0%, rgba(253,29,29,0.45171572046787467) 50%, rgba(252,176,69,0.5609594179468662) 100%);
+    color: rgb(68, 2, 52);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button:focus{
+    outline: 2px solid rgb(245, 196, 35);
+}
+.imgStatus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.usersInfo{
+    margin-left: 40px;
+    min-width: 220px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-self: center;
+}
+.mrgBottom{
+    margin-bottom: 15px;
+}
+.name{
+    font-size: 24px;
+    font-weight: bold;
+}
+.image{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

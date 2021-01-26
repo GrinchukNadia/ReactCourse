@@ -27,18 +27,16 @@ let initialStore = {
 
 const chatReduser = (state = initialStore, action) => {
     switch (action.type) {
-        case ADD_MESSAGE : 
-            let newMessage = {
-            text: state.newMessage,
-            person: "me"};
-        
-            state.messageData.push(newMessage);
-            state.newMessage = "";
-            return state;
+        case ADD_MESSAGE :
+            let text = state.newMessage; 
+            return {
+                ...state, 
+                newMessage: "",
+                messageData: [...state.messageData, {text: text, person: "me"} ]
+            };
 
         case ON_MESSAGE_CHANGE :
-            state.newMessage = action.text;
-            return state;
+            return {...state, newMessage: action.text};
 
         default:
             return state;

@@ -6,11 +6,11 @@ a{
   color: #27051f;
 }
 .wrapper{
-  max-width: 1200px;
-  margin: auto;
 }
 .wrapper.wrapperMain{
   display: flex;
+  max-width: 1200px;
+  margin: auto;
 }
 
 

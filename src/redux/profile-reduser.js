@@ -10,28 +10,33 @@ let initialStore = {
     {image: "https://i.pinimg.com/originals/02/29/cf/0229cf00478ba83e641dfd23ef0339c5.png", message: "ААААААААААААААААААААААААААААААААААААААА", likes: "10M"},
     {image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg", message: "НЕ НАДО ТАК МНОГО ЛАЙКОВ", likes: "10M"} 
                 ],
-  newPost: "" 
+  newPostText: "" 
 
 }
 
 const profileReduser = (state = initialStore, action) => {
-    switch (action.type) {
-        case ADD_POST:
-            let newPost = {
-                  image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
-                  message: state.newPost,
-                  likes: 0};
-          
-            state.commentsData.push(newPost);
-            state.newPost = "";
-            return state;
+  switch (action.type) {
+    case ADD_POST:
+      let newPost = {
+        image: "https://i.pinimg.com/736x/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64--youtube.jpg",
+        message: state.newPostText,
+        likes: 0};
 
-        case ON_POST_CHAGE:  
-            state.newPost = action.text;
-            return state;
+      return {
+        ...state,
+        commentsData: [...state.commentsData, newPost],
+        newPostText: ""
+      };
 
-        default:
-            return state;
+    case ON_POST_CHAGE: 
+      return {
+        ...state,
+        newPostText: action.text
+      };
+        
+
+    default:
+        return state;
     }
 }
 

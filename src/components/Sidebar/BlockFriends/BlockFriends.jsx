@@ -4,7 +4,7 @@ import s from './BlockFriends.module.css';
 
 const BlockFriends = () => {
     return (
-        <div>
+        <div className={s.friendBlock}>
             <div className={s.titleFriends}>Friends</div>
             <div>
                 
