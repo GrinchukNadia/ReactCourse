@@ -15,16 +15,18 @@
 }
 .button{
     padding: 10px 15px;
-    background: linear-gradient(90deg, rgba(131,58,180,0.5973739837731968) 0%, rgba(253,29,29,0.45171572046787467) 50%, rgba(252,176,69,0.5609594179468662) 100%);
-    color: rgb(68, 2, 52);
-    font-weight: bold;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
-    border: none;
+    border: 1px solid rgb(184, 184, 184);
     border-radius: 4px;
     cursor: pointer;
 }
 .button:focus{
     outline: 2px solid rgb(245, 196, 35);
+}
+.button:hover{
+    background: linear-gradient(90deg, rgba(131,58,180,0.5973739837731968) 0%, rgba(253,29,29,0.45171572046787467) 50%, rgba(252,176,69,0.5609594179468662) 100%);
+
 }
 .imgStatus{
     display: flex;
@@ -39,7 +41,12 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    align-self: center;
+    /* align-self: center; */
+}
+.nameStatus{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .mrgBottom{
     margin-bottom: 15px;

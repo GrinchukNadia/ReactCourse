@@ -1,27 +1,20 @@
-import elia from './../img/friends/elia.jpg';
-import dania from './../img/friends/dania.jpg';
-import luba from './../img/friends/luba.jpg';
-
 let FOLLOW = "FOLLOW";
 let UNFOLLOW = "UNFOLLOW";
 let SET_USERS = "SET-USERS";
 
 
 let initialStore = {
-    users: [
-        {id: 1, name: "Elia", followed: true, img: elia, status: "Super exited", location: { city: "Kiev", country: "Ucraine"} },
-        {id: 2, name: "Dania", followed: false, img: dania, status: "Exited", location: { city: "Moscow", country: "Russia"} },
-        {id: 3, name: "Luba", followed: true, img: luba, status: "Super", location: { city: "Minsk", country: "Belarus"} }
-    ]
+    users: [ ]
 }
 
 const usersReduser = (state = initialStore, action) => {
+    debugger
     switch (action.type) {
         case FOLLOW:
             return {
                 ...state, 
                 users: state.users.map(el => {
-                    if (el === action.usersId) {
+                    if (el.id === action.usersId) {
                         return {...el, followed: true}
                     }
                     return el;
@@ -32,7 +25,7 @@ const usersReduser = (state = initialStore, action) => {
             return {
                 ...state,
                 users: state.users.map( el => {
-                    if ( el === action.usersId) {
+                    if ( el.id === action.usersId) {
                         return {...el, followed: false}
                     }
                     return el;
