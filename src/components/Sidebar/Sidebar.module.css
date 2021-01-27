@@ -1,6 +1,7 @@
 .aside{
   background-color: rgb(255, 255, 255);
   min-width: 140px;
+  min-height: calc(100vh - 80px);
 }
 ul li{
   list-style: none;

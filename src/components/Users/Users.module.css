@@ -1,6 +1,5 @@
 .body{
-    width: 100%;
-    margin: auto;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
 }
@@ -9,7 +8,7 @@
     margin: 20px 10px 20px 30px;
     display: flex;
     justify-content: space-between;
-    width: fit-content;
+    max-width: 42%;
     background-color: rgb(245, 245, 245);
     box-shadow: 2px 4px 13px 0px #0000002f;
 }
@@ -20,6 +19,8 @@
     border: 1px solid rgb(184, 184, 184);
     border-radius: 4px;
     cursor: pointer;
+    width: 104px;
+    text-align: center;
 }
 .button:focus{
     outline: 2px solid rgb(245, 196, 35);
@@ -34,14 +35,14 @@
     align-items: center;
 }
 .usersInfo{
-    margin-left: 40px;
+    margin-left: 20px;
     min-width: 220px;
     border: 1px solid rgb(219, 219, 219);
     border-radius: 3px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 10px 20px;
-    /* align-self: center; */
 }
 .nameStatus{
     display: flex;
