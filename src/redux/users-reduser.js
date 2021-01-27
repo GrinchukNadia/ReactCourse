@@ -8,7 +8,6 @@ let initialStore = {
 }
 
 const usersReduser = (state = initialStore, action) => {
-    debugger
     switch (action.type) {
         case FOLLOW:
             return {
