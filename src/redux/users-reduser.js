@@ -9,7 +9,8 @@ let initialStore = {
     users: [ ],
     totalCount: 0,
     pageSize: 99,
-    activePage: 1
+    activePage: 1,
+    isFethcing: true
 }
 
 const usersReduser = (state = initialStore, action) => {
