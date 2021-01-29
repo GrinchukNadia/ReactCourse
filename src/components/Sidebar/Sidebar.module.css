@@ -15,3 +15,14 @@ a.active{
   text-decoration: underline;
   color: #881b6e;
 }
+@media (max-width: 495px) {
+  .aside{
+    min-height: auto;
+  }
+  ul{
+    display: flex;
+  }
+  li{
+    margin-right: 6px;
+  }
+}

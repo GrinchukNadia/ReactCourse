@@ -8,7 +8,7 @@ class Users extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.activePage}&count=${this.props.pageSize}`)
         .then(response => {
             this.props.setUsers(response.data.items);
-            console.log(response);
+            this.props.setTotalUsersCount(response.data.totalCount);
         })
     }
 
@@ -18,11 +18,11 @@ class Users extends React.Component {
             axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items);
-                console.log(response);
             });
     }
 
     render() {
+        
         let totalPageCount = Math.ceil(this.props.usersTotalCount / this.props.pageSize);
         let pages =[];
         for(let i=1; i <= totalPageCount; i++){
@@ -30,7 +30,7 @@ class Users extends React.Component {
         }
 
         return(
-            <div >
+            <div className={style.usersBlock}>
                 <div className={style.pagesCount}>
                     {pages.map(el => {
                         return <div className={this.props.activePage === el && style.active} 
@@ -64,8 +64,8 @@ class Users extends React.Component {
                                             {el.status}
                                         </div>
                                         <div className={style.mrgBottom}>
-                                            <p>{"el.location.city"},</p> 
-                                            <p>{" el.location.country"}</p>
+                                            <p className={style.location}>{"el.location.city"},</p> 
+                                            <p className={style.location}>{" el.location.country"}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 // import React from 'react';
 import Users from './Users';
-import {followAC, unfollowAC, setUsersAC, activePageAC} from './../../redux/users-reduser';
+import {followAC, unfollowAC, setUsersAC, activePageAC, totalCountAC} from './../../redux/users-reduser';
 import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
@@ -24,6 +24,9 @@ let mapDispatchToPtops = (dispatch) => {
         },
         setActivePage: (id) => {
             dispatch(activePageAC(id))
+        },
+        setTotalUsersCount: (totalCount) => {
+            dispatch(totalCountAC(totalCount))
         }
     }
 }

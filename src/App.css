@@ -5,12 +5,16 @@ a{
   text-decoration: none;
   color: #27051f;
 }
-.wrapper{
-}
+/* .wrapper{
+} */
 .wrapper.wrapperMain{
   display: flex;
   max-width: 1200px;
   margin: auto;
 }
-
+@media (max-width: 495px) {
+  .wrapper.wrapperMain {
+      flex-direction: column;
+  }
+}
 

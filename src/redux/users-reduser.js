@@ -2,12 +2,13 @@ let FOLLOW = "FOLLOW";
 let UNFOLLOW = "UNFOLLOW";
 let SET_USERS = "SET-USERS";
 let SET_ACTIVE_PAGE = "SET_ACTIVE_PAGE";
+let SET_TOTAL_COUNT = "SET_TOTAL_COUNT";
 
 
 let initialStore = {
     users: [ ],
-    totalCount: 9484,
-    pageSize: 100,
+    totalCount: 0,
+    pageSize: 99,
     activePage: 1
 }
 
@@ -45,6 +46,11 @@ const usersReduser = (state = initialStore, action) => {
                 ...state,
                 activePage: action.activePage
             }
+        case SET_TOTAL_COUNT:
+            return{
+                ...state,
+                totalCount: action.totalCount
+            }
 
         default:
             return state;
@@ -55,6 +61,7 @@ export let followAC = (usersId) => { return {type: FOLLOW, usersId}}
 export let unfollowAC = (usersId) => {return {type: UNFOLLOW, usersId}}
 export let setUsersAC = (users) => {return {type: SET_USERS, users}}
 export let activePageAC = (activePage) => {return {type: SET_ACTIVE_PAGE, activePage}}
+export let totalCountAC = (totalCount) => {return {type: SET_TOTAL_COUNT, totalCount}}
 
 
 export default usersReduser;
