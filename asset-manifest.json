@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ReactCourse/static/css/main.4de84cd0.chunk.css",
-    "main.js": "/ReactCourse/static/js/main.9c6f13e7.chunk.js",
-    "main.js.map": "/ReactCourse/static/js/main.9c6f13e7.chunk.js.map",
+    "main.css": "/ReactCourse/static/css/main.7ea076b9.chunk.css",
+    "main.js": "/ReactCourse/static/js/main.e90aff73.chunk.js",
+    "main.js.map": "/ReactCourse/static/js/main.e90aff73.chunk.js.map",
     "runtime-main.js": "/ReactCourse/static/js/runtime-main.da06b195.js",
     "runtime-main.js.map": "/ReactCourse/static/js/runtime-main.da06b195.js.map",
-    "static/js/2.8ab95585.chunk.js": "/ReactCourse/static/js/2.8ab95585.chunk.js",
-    "static/js/2.8ab95585.chunk.js.map": "/ReactCourse/static/js/2.8ab95585.chunk.js.map",
+    "static/js/2.f383abd3.chunk.js": "/ReactCourse/static/js/2.f383abd3.chunk.js",
+    "static/js/2.f383abd3.chunk.js.map": "/ReactCourse/static/js/2.f383abd3.chunk.js.map",
     "index.html": "/ReactCourse/index.html",
-    "static/css/main.4de84cd0.chunk.css.map": "/ReactCourse/static/css/main.4de84cd0.chunk.css.map",
-    "static/js/2.8ab95585.chunk.js.LICENSE.txt": "/ReactCourse/static/js/2.8ab95585.chunk.js.LICENSE.txt",
+    "static/css/main.7ea076b9.chunk.css.map": "/ReactCourse/static/css/main.7ea076b9.chunk.css.map",
+    "static/js/2.f383abd3.chunk.js.LICENSE.txt": "/ReactCourse/static/js/2.f383abd3.chunk.js.LICENSE.txt",
     "static/media/logo.93ac40c2.png": "/ReactCourse/static/media/logo.93ac40c2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.da06b195.js",
-    "static/js/2.8ab95585.chunk.js",
-    "static/css/main.4de84cd0.chunk.css",
-    "static/js/main.9c6f13e7.chunk.js"
+    "static/js/2.f383abd3.chunk.js",
+    "static/css/main.7ea076b9.chunk.css",
+    "static/js/main.e90aff73.chunk.js"
   ]
 }
