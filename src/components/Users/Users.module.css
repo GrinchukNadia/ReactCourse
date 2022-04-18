@@ -1,9 +1,6 @@
 .body{
-    /* height: fit-content;
-    display: flex;
-    flex-wrap: wrap; */
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50% ;
 }
 .usersBlock{
     width: 85%;
@@ -11,15 +8,11 @@
 }
 .container{
     padding: 10px 20px;
-    /* margin: 20px 10px 20px 30px; */
     display: flex;
     justify-content: space-between;
-    /* width: 442px; */
     background-color: rgb(245, 245, 245);
     box-shadow: 2px 4px 13px 0px #0000002f;
     margin: 10px;
-    /* width: 27%; */
-
 }
 .button{
     padding: 8px 0px;
@@ -37,7 +30,9 @@
 }
 .button:hover{
     background: linear-gradient(90deg, rgba(131,58,180,0.5973739837731968) 0%, rgba(253,29,29,0.45171572046787467) 50%, rgba(252,176,69,0.5609594179468662) 100%);
-
+}
+.button:disabled{
+    color:rgba(0, 0, 0, 0.29)
 }
 .imgStatus{
     display: flex;
@@ -64,9 +59,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-/* .mrgBottom{
-    margin-bottom: 15px;
-} */
 .name{
     font-size: 24px;
     font-weight: bold;
@@ -90,6 +82,14 @@
 }
 .active{
     font-weight: bold;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons>button {
+    margin-bottom: 8px;
 }
 @media (max-width: 1024px) {
     .body{

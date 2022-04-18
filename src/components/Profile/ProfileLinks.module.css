@@ -1,0 +1,27 @@
+.main {
+  width:  20%;
+  padding: 20px;
+  background-color: rgb(246, 246, 246);
+}
+
+.link{
+    padding: 8px 0px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    text-transform: capitalize;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin: 8px 0;
+    background-color: white;
+}
+
+.link:focus{
+    outline: 2px solid rgb(245, 196, 35);
+}
+.link:hover{
+    background: linear-gradient(90deg, rgba(131,58,180,0.5973739837731968) 0%, rgba(253,29,29,0.45171572046787467) 50%, rgba(252,176,69,0.5609594179468662) 100%);
+
+}

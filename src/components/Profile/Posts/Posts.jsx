@@ -1,26 +1,18 @@
 import React from 'react';
-import Post from './Post/Post'
-import s from './Posts.module.css'
-// import {addPostActionCreator, onPostChangeActionCreator} from './../../../redux/profile-reduser'
+import Post from './Post/Post';
+import s from './Posts.module.css';
 
 
 const Posts = (props) => {
-
-debugger; 
-  let coments = props.posts.map( post => <Post  image={post.image} message={post.message} likes={post.likes} />)
-
-  let newPostElement = React.createRef();
+  let coments = props.posts.map( post => <Post key={post.id}  image={post.image} message={post.message} likes={post.likes} />)
 
   let addPost = () => {
     props.addPost();
-    // props.dispatch(addPostActionCreator());
   }
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
+  let onPostChange = (event) => {
+    let text = event.target.value;
     props.onPostChange(text);
-    // let action = onPostChangeActionCreator(text);
-    // props.dispatch(action);
   }
 
   return (
@@ -28,10 +20,9 @@ debugger;
         <div className={s.addMessage}>
           <textarea value={props.newPostElement} 
                     onChange={onPostChange}
-                    ref={newPostElement} 
                     name="" id="" />
           <div>
-            <button onClick={addPost}>Add post</button>
+            <button className={s.button} onClick={addPost}>Add post</button>
           </div>
         </div>
         { coments }

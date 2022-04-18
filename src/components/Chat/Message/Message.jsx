@@ -4,7 +4,6 @@ import './Message.css';
 
 const Message = (props) => {
     let person = props.person;
-    console.log(person);
     return (
     <div className={s.chat}>
         <div id={person} className={s.friend}>

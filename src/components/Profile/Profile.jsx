@@ -1,25 +1,23 @@
 import React from 'react';
-import s from './Profile.module.css'
-import PostsContainer from './Posts/PostsContainer'
+import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo';
+import ProfileLinks from './ProfileLinks';
 
 const Profile = (props) => {
-;
+  if (!props.userProfile) {
+    return null;
+  }
 
-
-    return (
-      <main className={s.main}>
-
-      <div className={s.imageBanner}>
-        <img src="https://i.pinimg.com/originals/d6/d1/97/d6d19793de569671e2e67496f246b3b5.jpg"></img>
-      </div>
-
-      <div>
-        ava + description
-      </div>
-
-      <PostsContainer />
-    </main>
-    )
-}
+  return (
+    <div className={s.main}>
+      <ProfileLinks contacts={props.userProfile.contacts} />
+      <ProfileInfo
+        profileInfo={props.userProfile}
+        status={props.status}
+        updateStatus={props.updateStatus}
+      />
+    </div>
+  );
+};
 
 export default Profile;

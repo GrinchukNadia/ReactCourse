@@ -1,6 +1,7 @@
 .main{
   background-color: rgb(255, 255, 255);
   width: 100%;
+  display: flex;
 }
 
 .imageBanner img{
